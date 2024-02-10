@@ -1,0 +1,128 @@
+$engine: 3
+$onesync: on
+name: RPX Framework
+author: Sinatra#0101
+description: An up-to-date, modular roleplay framework for RedM
+
+tasks:
+  # Download Base Files
+  - action: download_github
+    src: https://github.com/RPX-RedM/txAdminRecipe
+    ref: main
+    dest: ./tmp/rpx
+
+  - action: move_path
+    src: ./tmp/rpx/server.cfg
+    dest: ./server.cfg
+
+  - action: move_path
+    src: ./tmp/rpx/ServerLogo.png
+    dest: ./ServerLogo.png
+
+  # Download Standalone Resources
+  - action: download_github
+    dest: ./resources/[CFX]
+    ref: main
+    src: https://github.com/RPX-RedM/cfx-server-data
+
+  - action: download_file
+    path: ./tmp/files/oxmysql.zip
+    url: https://github.com/overextended/oxmysql/releases/download/v2.6.0/oxmysql.zip
+  - action: unzip
+    dest: ./resources/[STANDALONE]/
+    src: ./tmp/files/oxmysql.zip
+
+  - action: download_github
+    dest: ./resources/[STANDALONE]/ox_lib
+    ref: master
+    src: https://github.com/RPX-RedM/ox_lib
+
+  - action: download_github
+    dest: ./resources/[STANDALONE]/meta_target
+    ref: main
+    src: https://github.com/RPX-RedM/meta_target
+
+  - action: download_github
+    dest: ./resources/[STANDALONE]/PolyZone
+    ref: master
+    src: https://github.com/qbcore-redm-framework/PolyZone
+
+  - action: download_github
+    dest: ./resources/[STANDALONE]/weathersync
+    ref: master
+    src: https://github.com/kibook/weathersync
+
+  # Download RPX Resources
+  - action: download_github
+    dest: ./resources/rpx-core
+    ref: main
+    src: https://github.com/RPX-RedM/rpx-core
+
+  - action: download_github
+    dest: ./resources/[RPX]/rpx-multicharacter
+    ref: main
+    src: https://github.com/RPX-RedM/rpx-multicharacter
+
+  - action: download_github
+    dest: ./resources/[RPX]/rpx-appearance
+    ref: main
+    src: https://github.com/RPX-RedM/rpx-appearance
+
+  - action: download_github
+    dest: ./resources/[RPX]/rpx-inventory
+    ref: main
+    src: https://github.com/RPX-RedM/rpx-inventory
+
+  - action: download_github
+    dest: ./resources/[RPX]/rpx-spawn
+    ref: main
+    src: https://github.com/RPX-RedM/rpx-spawn
+
+  - action: download_github
+    dest: ./resources/[RPX]/rpx-hud
+    ref: main
+    src: https://github.com/RPX-RedM/rpx-hud
+
+  - action: download_github
+    dest: ./resources/[RPX]/rpx-cinematic
+    ref: main
+    src: https://github.com/RPX-RedM/rpx-cinematic
+
+  - action: download_github
+    dest: ./resources/[RPX]/rpx-shops
+    ref: main
+    src: https://github.com/RPX-RedM/rpx-shops
+
+  - action: download_github
+    dest: ./resources/[RPX]/rpx-banks
+    ref: main
+    src: https://github.com/RPX-RedM/rpx-banks
+
+  - action: download_github
+    dest: ./resources/[RPX]/rpx-radial
+    ref: main
+    src: https://github.com/RPX-RedM/rpx-radial
+
+  - action: download_github
+    dest: ./resources/[RPX]/rpx-policejob
+    ref: main
+    src: https://github.com/RPX-RedM/rpx-policejob
+
+  - action: download_github
+    dest: ./resources/[RPX]/rpx-doctorjob
+    ref: main
+    src: https://github.com/RPX-RedM/rpx-doctorjob
+
+  - action: download_github
+    dest: ./resources/[RPX]/rpx-goldpan
+    ref: main
+    src: https://github.com/RPX-RedM/rpx-goldpan
+
+  - action: download_github
+    dest: ./resources/[RPX]/rpx-playershops
+    ref: main
+    src: https://github.com/RPX-RedM/rpx-playershops
+
+  # Clean up
+  - action: remove_path
+    path: ./tmp
